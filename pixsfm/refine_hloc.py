@@ -107,7 +107,7 @@ class PixSfM(PixSfM_colmap):
         if reference_model_path is None:
             hloc.reconstruction.main(
                 model_path, image_dir, pairs_path, keypoints_path,
-                matches_path, **hloc_args)
+                matches_path, mapper_options = {"ba_refine_focal_length" : False, "ba_refine_principal_point" : False})# **hloc_args)
         else:
             hloc.triangulation.main(
                 model_path, reference_model_path, image_dir, pairs_path,
